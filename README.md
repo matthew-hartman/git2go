@@ -10,7 +10,7 @@ Due to the fact that Go 1.11 module versions have semantic meaning and don't nec
 
 | libgit2 | git2go        |
 |---------|---------------|
-| main    | (will be v35) |
+| main    | (will be v38) |
 | 1.7     | v37           |
 | 1.5     | v34           |
 | 1.3     | v33           |
