@@ -2,7 +2,7 @@ git2go
 ======
 [![GoDoc](https://godoc.org/github.com/jeffwelling/git2go?status.svg)](http://godoc.org/github.com/jeffwelling/git2go/v37)
 
-Go bindings for [libgit2](http://libgit2.github.com/).
+Go bindings for [libgit2](http://libgit2.github.com/). This was forked from [libgit2/git2go](https://github.com/libgit2/git2go) in order to support a recent version of libgit2. I hope to upstream the changes to libgit2 in the future.
 
 ### Which Go version to use
 
@@ -110,4 +110,5 @@ Authors
 
 - Carlos Martín (@carlosmn)
 - Vicent Martí (@vmg)
+- Jeff Welling (@jeffwelling)
 
