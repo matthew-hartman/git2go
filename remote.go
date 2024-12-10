@@ -130,7 +130,7 @@ type FetchOptions struct {
 	Prune FetchPrune
 	// Whether to write the results to FETCH_HEAD. Defaults to
 	// on. Leave this default in order to behave like git.
-	UpdateFetchhead bool
+	UpdateFetchhead uint
 
 	// Determines how to behave regarding tags on the remote, such
 	// as auto-downloading tags for objects we're downloading or
@@ -685,7 +685,7 @@ func (c *RemoteCollection) Create(name string, url string) (*Remote, error) {
 	return remote, nil
 }
 
-//CreateWithOptions Creates a repository object with extended options.
+// CreateWithOptions Creates a repository object with extended options.
 func (c *RemoteCollection) CreateWithOptions(url string, option *RemoteCreateOptions) (*Remote, error) {
 	remote := &Remote{repo: c.repo}
 
@@ -983,7 +983,7 @@ func populateFetchOptions(copts *C.git_fetch_options, opts *FetchOptions, errorT
 	}
 	populateRemoteCallbacks(&copts.callbacks, &opts.RemoteCallbacks, errorTarget)
 	copts.prune = C.git_fetch_prune_t(opts.Prune)
-	copts.update_fetchhead = cbool(opts.UpdateFetchhead)
+	copts.update_fetchhead = C.uint(opts.UpdateFetchhead)
 	copts.download_tags = C.git_remote_autotag_option_t(opts.DownloadTags)
 
 	copts.custom_headers = C.git_strarray{

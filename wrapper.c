@@ -104,7 +104,7 @@ static int set_callback_error(char *error_message, int ret)
 {
 	if (error_message != NULL) {
 		if (ret < 0)
-			git_error_set_str(GIT_ERROR_CALLBACK, error_message);
+			giterr_set_str(GIT_ERROR_CALLBACK, error_message);
 		free(error_message);
 	}
 	return ret;
